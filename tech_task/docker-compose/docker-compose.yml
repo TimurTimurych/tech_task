@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: book_service
+    environment:
+    - POSTGRES_USER=book_service
+    - POSTGRES_PASSWORD=book_service
+    - POSTGRES_DB=book_service
+    ports:
+    - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+    driver: local
